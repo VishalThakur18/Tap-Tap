@@ -1,44 +1,27 @@
 package com.example.taptap;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.view.View;
 
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.taptap.databinding.ActivityLoginBinding;
 
 public class Login extends AppCompatActivity {
 
-    private AppBarConfiguration appBarConfiguration;
     private ActivityLoginBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
-
-//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_login);
-//        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-
+        binding.googleSignInBtn.setOnClickListener(v -> {
+            // TODO: Add actual Google Sign-In logic here if needed
+            startActivity(new Intent(Login.this, MainActivity.class));
+            finish(); // Optional: Close Login activity so it doesn't stay in back stack
+        });
     }
-
-//    @Override
-//    public boolean onSupportNavigateUp() {
-//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_login);
-//        return NavigationUI.navigateUp(navController, appBarConfiguration)
-//                || super.onSupportNavigateUp();
-//    }
 }

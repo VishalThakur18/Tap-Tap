@@ -1,9 +1,10 @@
 package com.example.taptap;
 
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,7 +12,9 @@ import androidx.viewpager2.widget.ViewPager2;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button homeBtn, referBtn, walletBtn;
+    LinearLayout homeBtnContainer, referBtnContainer, walletBtnContainer;
+    ImageView homeIcon, referIcon, walletIcon;
+    TextView homeText, referText, walletText;
     ViewPager2 viewPager;
 
     @Override
@@ -20,25 +23,37 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        homeBtn = findViewById(R.id.homeBtn);
-        referBtn = findViewById(R.id.referBtn);
-        walletBtn = findViewById(R.id.walletBtn);
+        // Containers
+        homeBtnContainer = findViewById(R.id.homeBtnContainer);
+        referBtnContainer = findViewById(R.id.referBtnContainer);
+        walletBtnContainer = findViewById(R.id.walletBtnContainer);
+
+        // Icons
+        homeIcon = findViewById(R.id.homeIcon);
+        referIcon = findViewById(R.id.referIcon);
+        walletIcon = findViewById(R.id.walletIcon);
+
+        // Texts
+        homeText = findViewById(R.id.homeText);
+        referText = findViewById(R.id.referText);
+        walletText = findViewById(R.id.walletText);
+
+        // ViewPager
         viewPager = findViewById(R.id.viewpagernotif);
-
         viewPager.setAdapter(new FragmentAdapter(this));
-        viewPager.setUserInputEnabled(false); // disable swipe
+        viewPager.setUserInputEnabled(false); // Disable swipe
 
-        homeBtn.setOnClickListener(v -> {
+        homeBtnContainer.setOnClickListener(v -> {
             viewPager.setCurrentItem(0);
             highlightButton(0);
         });
 
-        referBtn.setOnClickListener(v -> {
+        referBtnContainer.setOnClickListener(v -> {
             viewPager.setCurrentItem(1);
             highlightButton(1);
         });
 
-        walletBtn.setOnClickListener(v -> {
+        walletBtnContainer.setOnClickListener(v -> {
             viewPager.setCurrentItem(2);
             highlightButton(2);
         });
@@ -50,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Set default to Home
+        // Set default
         viewPager.setCurrentItem(0);
         highlightButton(0);
     }
@@ -60,28 +75,37 @@ public class MainActivity extends AppCompatActivity {
 
         switch (index) {
             case 0:
-                styleActiveButton(homeBtn);
+                homeBtnContainer.setBackgroundResource(R.drawable.bg_selected_button);
+                homeText.setTextColor(Color.WHITE);
+                homeIcon.setImageResource(R.drawable.ic_home_white);
                 break;
             case 1:
-                styleActiveButton(referBtn);
+                referBtnContainer.setBackgroundResource(R.drawable.bg_selected_button);
+                referText.setTextColor(Color.WHITE);
+                referIcon.setImageResource(R.drawable.ic_refer_white);
                 break;
             case 2:
-                styleActiveButton(walletBtn);
+                walletBtnContainer.setBackgroundResource(R.drawable.bg_selected_button);
+                walletText.setTextColor(Color.WHITE);
+                walletIcon.setImageResource(R.drawable.ic_wallet_white);
                 break;
         }
     }
 
     private void resetButtonStyles() {
-        homeBtn.setBackgroundTintList(ColorStateList.valueOf(Color.WHITE));
-        homeBtn.setTextColor(Color.BLACK);
-        referBtn.setBackgroundTintList(ColorStateList.valueOf(Color.WHITE));
-        referBtn.setTextColor(Color.BLACK);
-        walletBtn.setBackgroundTintList(ColorStateList.valueOf(Color.WHITE));
-        walletBtn.setTextColor(Color.BLACK);
-    }
+        // Reset Home
+        homeBtnContainer.setBackgroundResource(R.drawable.bg_unselected_button);
+        homeText.setTextColor(Color.BLACK);
+        homeIcon.setImageResource(R.drawable.ic_home_black);
 
-    private void styleActiveButton(Button button) {
-        button.setBackgroundTintList(ColorStateList.valueOf(Color.BLACK));
-        button.setTextColor(Color.WHITE);
+        // Reset Refer
+        referBtnContainer.setBackgroundResource(R.drawable.bg_unselected_button);
+        referText.setTextColor(Color.BLACK);
+        referIcon.setImageResource(R.drawable.ic_refer_black);
+
+        // Reset Wallet
+        walletBtnContainer.setBackgroundResource(R.drawable.bg_unselected_button);
+        walletText.setTextColor(Color.BLACK);
+        walletIcon.setImageResource(R.drawable.ic_wallet_black);
     }
 }

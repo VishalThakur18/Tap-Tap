@@ -1,16 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragments.ReferFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:text="Refer Fragment"
-        android:layout_gravity="center"
-        android:gravity="center"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Referral Code"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="12dp"
+                android:textColor="#181818"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/refer_card_bg"
+                android:layout_gravity="center"
+                android:elevation="12dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center">
 
-</FrameLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="453673"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp">
+                <ImageView
+                    android:id="@+id/primary_img_refer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/refer_img_1x"/>
+                <ImageView
+                    android:id="@+id/top_left_star"
+                    android:layout_width="78dp"
+                    android:layout_height="78dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="28dp"
+                    android:rotation="10"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/primary_img_refer"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/refer_star_left"/>
+                <ImageView
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="45dp"
+                    android:rotation="10"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/top_left_star"
+                    app:layout_constraintEnd_toStartOf="@id/primary_img_refer"
+                    android:src="@drawable/refer_star_left_btm"/>
+                <ImageView
+                    android:id="@+id/top_right_star"
+                    android:layout_width="78dp"
+                    android:layout_height="78dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="28dp"
+                    android:rotation="-10"
+                    app:layout_constraintStart_toEndOf="@id/primary_img_refer"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/refer_star_right"/>
+                <ImageView
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginEnd="45dp"
+                    android:rotation="-10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/top_right_star"
+                    app:layout_constraintStart_toEndOf="@id/primary_img_refer"
+                    android:src="@drawable/refer_star_right_btm"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="35dp"
+                android:text="Invite &amp; Win"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Invite 3 friends and get 50% lifetime \ncommissions of your friends earnings"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#7C7C7C"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginStart="12dp"
+                android:layout_gravity="center"
+                android:src="@drawable/invite_btn_img"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
