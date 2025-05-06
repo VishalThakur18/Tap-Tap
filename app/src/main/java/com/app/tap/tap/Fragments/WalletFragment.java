@@ -1,4 +1,4 @@
-package com.example.taptap.Fragments;
+package com.app.tap.tap.Fragments;
 
 import android.os.Bundle;
 
@@ -8,14 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.taptap.R;
+import com.app.tap.tap.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ReferFragment#newInstance} factory method to
+ * Use the {@link WalletFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ReferFragment extends Fragment {
+public class WalletFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class ReferFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public ReferFragment() {
+    public WalletFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class ReferFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ReferFragment.
+     * @return A new instance of fragment WalletFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ReferFragment newInstance(String param1, String param2) {
-        ReferFragment fragment = new ReferFragment();
+    public static WalletFragment newInstance(String param1, String param2) {
+        WalletFragment fragment = new WalletFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class ReferFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_refer, container, false);
+        return inflater.inflate(R.layout.fragment_wallet, container, false);
     }
 }

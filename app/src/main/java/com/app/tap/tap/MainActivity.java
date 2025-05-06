@@ -1,4 +1,4 @@
-package com.example.taptap;
+package com.app.tap.tap;
 
 import android.graphics.Color;
 import android.os.Bundle;

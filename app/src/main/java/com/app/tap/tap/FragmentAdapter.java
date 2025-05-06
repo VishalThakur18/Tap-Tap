@@ -1,13 +1,13 @@
-package com.example.taptap;
+package com.app.tap.tap;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.taptap.Fragments.HomeFragment;
-import com.example.taptap.Fragments.ReferFragment;
-import com.example.taptap.Fragments.WalletFragment;
+import com.app.tap.tap.Fragments.HomeFragment;
+import com.app.tap.tap.Fragments.ReferFragment;
+import com.app.tap.tap.Fragments.WalletFragment;
 
 public class FragmentAdapter extends FragmentStateAdapter {
 

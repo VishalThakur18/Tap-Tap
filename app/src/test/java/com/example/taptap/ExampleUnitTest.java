@@ -1,4 +1,4 @@
-package com.example.taptap;
+package com.app.tap.tap;
 
 import org.junit.Test;
 

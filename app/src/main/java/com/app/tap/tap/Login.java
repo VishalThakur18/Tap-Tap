@@ -1,4 +1,4 @@
-package com.example.taptap;
+package com.app.tap.tap;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.taptap.databinding.ActivityLoginBinding;
+import com.app.tap.tap.databinding.ActivityLoginBinding;
 
 public class Login extends AppCompatActivity {
 
